@@ -1,13 +1,3 @@
-const REFERENCE_ARTISTS = [
-  'Luke Combs',
-  'Morgan Wallen',
-  'Kameron Marlow',
-  'Tucker Wetmore',
-  'Hudson Westbrook',
-  'Jason Aldean',
-  'Scotty McCreery',
-];
-
 const DIMENSION_ICONS = {
   theme: '◈',
   hook_analysis: '◎',
@@ -50,14 +40,16 @@ export default function AnalyzerResults({ data }) {
           {data.structure.map((block, i) => (
             <div key={i} className="structure-block">
               <div className="structure-label">{block.section}</div>
-              <p className="structure-desc">{block.description}</p>
+              <p className="structure-desc">
+                {block.description || <em style={{ opacity: 0.4 }}>No description</em>}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Analysis Dimensions */}
-      {dimensions.map(key => (
+      {dimensions.map(key => data[key] ? (
         <section key={key} className="result-section">
           <h3 className="section-heading">
             <span className="section-icon">{DIMENSION_ICONS[key]}</span>
@@ -65,23 +57,25 @@ export default function AnalyzerResults({ data }) {
           </h3>
           <p className="section-body">{data[key]}</p>
         </section>
-      ))}
+      ) : null)}
 
       {/* What Makes It Great */}
-      <section className="result-section greatness-section">
-        <h3 className="section-heading">
-          <span className="section-icon">★</span>
-          What Makes It Great
-        </h3>
-        <ul className="greatness-list">
-          {data.what_makes_it_great.map((point, i) => (
-            <li key={i} className="greatness-item">
-              <span className="greatness-num">{i + 1}</span>
-              <p>{point}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {data.what_makes_it_great?.length > 0 && (
+        <section className="result-section greatness-section">
+          <h3 className="section-heading">
+            <span className="section-icon">★</span>
+            What Makes It Great
+          </h3>
+          <ul className="greatness-list">
+            {data.what_makes_it_great.map((point, i) => (
+              <li key={i} className="greatness-item">
+                <span className="greatness-num">{i + 1}</span>
+                <p>{point}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

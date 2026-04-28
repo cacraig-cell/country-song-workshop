@@ -39,18 +39,18 @@ export default function App() {
             <>
               <h2 className="mode-title">Song Analyzer</h2>
               <p className="mode-desc">
-                Enter any song title and artist. The workshop will break down exactly what makes it work —
-                structure, hooks, rhyme scheme, pacing, storytelling, and the specific craft moves
-                that make it land.
+                Enter a song title and artist, then work through the guided worksheet — structure,
+                hook, word choice, rhyme scheme, pacing, storytelling, and what makes it great.
+                The framework is baked in; you bring the analysis.
               </p>
             </>
           ) : (
             <>
               <h2 className="mode-title">Song Writer</h2>
               <p className="mode-desc">
-                Tell the workshop your concept and it'll write a complete, full-draft country song
-                in the style of modern blue-collar artists — with a structure guide, tone map, and
-                annotated craft notes on every major decision.
+                Pick a structure template, write your lyrics section by section, and annotate your
+                craft decisions. The app formats everything into a clean, exportable song sheet.
+                No internet needed — just you and the page.
               </p>
             </>
           )}
@@ -60,7 +60,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Powered by Claude · Built for writers who take the craft seriously</p>
+        <p>Built for writers who take the craft seriously</p>
       </footer>
     </div>
   );

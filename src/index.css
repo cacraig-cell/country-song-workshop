@@ -554,6 +554,271 @@ select option { background: #1a1a1a; }
   letter-spacing: 0.02em;
 }
 
+/* ── Worksheet Shell ───────────────────────────────────────────── */
+.worksheet {
+  margin-bottom: 40px;
+}
+
+.ws-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 12px;
+}
+
+.ws-section-header {
+  margin-bottom: 14px;
+}
+
+.ws-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws-heading-optional {
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.55;
+  margin-left: 2px;
+}
+
+.ws-hint {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.ws-gap-top { margin-top: 16px; }
+
+/* ── Structure Editor (Analyzer) ───────────────────────────────── */
+.structure-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.structure-editor-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 32px;
+  gap: 8px;
+  align-items: center;
+}
+
+.section-select {
+  font-size: 12.5px !important;
+  padding: 9px 10px !important;
+}
+
+.btn-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  flex-shrink: 0;
+  font-family: inherit;
+  padding: 0;
+}
+
+.btn-remove:hover {
+  border-color: var(--error-text);
+  color: var(--error-text);
+}
+
+.btn-add-section {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: transparent;
+  border: 1px dashed var(--border-focus);
+  color: var(--text-sec);
+  font-size: 12.5px;
+  font-family: inherit;
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-add-section:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── What Makes It Great Inputs ────────────────────────────────── */
+.greatness-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.greatness-input-row {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.greatness-input-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid rgba(200, 148, 26, 0.25);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Template Picker (Writer) ──────────────────────────────────── */
+.template-picker {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.template-btn {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: inherit;
+}
+
+.template-btn:hover { border-color: var(--border-focus); }
+
+.template-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.template-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+
+.template-notation {
+  font-size: 11px;
+  color: var(--text-sec);
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.template-btn.active .template-label { color: var(--accent); }
+.template-btn.active .template-notation { color: var(--accent); opacity: 0.7; }
+
+/* ── Lyric Editor (Writer) ─────────────────────────────────────── */
+.lyric-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lyric-editor-block {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lyric-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 8px 14px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(200, 148, 26, 0.05);
+}
+
+.section-label-select {
+  background: transparent !important;
+  border: none !important;
+  color: var(--accent) !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0 22px 0 0 !important;
+  cursor: pointer !important;
+  outline: none !important;
+  appearance: auto !important;
+  background-image: none !important;
+  width: auto !important;
+}
+
+.lyric-editor-block textarea {
+  width: 100%;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 14px 16px !important;
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  color: var(--text) !important;
+  resize: vertical;
+  outline: none !important;
+}
+
+.lyric-editor-block textarea::placeholder { color: var(--text-muted) !important; }
+
+/* ── Craft Note Inputs (Writer) ────────────────────────────────── */
+.craft-note-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.craft-note-input-row {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.craft-note-input-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Lyric empty state ─────────────────────────────────────────── */
+.lyric-empty { opacity: 0.25; }
+
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 680px) {
   .header-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -568,4 +833,8 @@ select option { background: #1a1a1a; }
   .results-title { font-size: 20px; }
   .mode-title { font-size: 22px; }
   .lyric-line { font-size: 15px; }
+  .ws-section { padding: 18px 16px; }
+  .structure-editor-row { grid-template-columns: 110px 1fr 28px; }
+  .template-picker { grid-template-columns: 1fr 1fr; }
+  .craft-note-input-row { grid-template-columns: 1fr; gap: 4px; }
 }
